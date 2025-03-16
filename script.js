@@ -104,7 +104,7 @@ function getBarData(data) {
       }]
   };
 }
-
+ 
 function getPieData(data) {
   return {
       labels: data.map(d => d.country),
