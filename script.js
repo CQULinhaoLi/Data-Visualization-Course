@@ -117,9 +117,9 @@ function getBarData(data) {
           label: '金牌',
           data: data.map(d => d.gold),
           backgroundColor: 'rgba(255, 206, 86, 0.7)',
-          borderRadius: 8,          // 圆角柱状图
-          borderSkipped: false,     // 完整圆角
-          categoryPercentage: 0.8,  // 调整柱宽
+          borderRadius: 8,          
+          borderSkipped: false,     
+          categoryPercentage: 0.8,  
       }, {
           label: '银牌',
           data: data.map(d => d.silver),
