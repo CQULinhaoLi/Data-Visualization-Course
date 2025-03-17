@@ -108,7 +108,7 @@ function createRadarChart(ctx, data) {
           }
       }
   });
-}
+}1
 
 function getBarData(data) {
   return {
@@ -134,7 +134,7 @@ function getBarData(data) {
           borderRadius: 8,          // 圆角柱状图
           borderSkipped: false,     // 完整圆角
           categoryPercentage: 0.8,  // 调整柱宽
-      }, ]
+      },]
   };
 }
  
