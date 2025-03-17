@@ -130,11 +130,26 @@ function getRadarData(data) {
 }
 
 function updateCharts(barChart, pieChart, radarChart, newData) {
+  // 先执行淡出动画
+  barChart.options.animation.duration = 500;
   barChart.data = getBarData(newData);
-  pieChart.data = getPieData(newData);
-  radarChart.data = getRadarData(newData);
-  
   barChart.update();
-  pieChart.update();
-  radarChart.update();
+  
+  // 使用交错的动画时间
+  setTimeout(() => {
+    pieChart.data = getPieData(newData);
+    pieChart.update();
+  }, 200);
+  
+  setTimeout(() => {
+    radarChart.data = getRadarData(newData);
+    radarChart.update();
+  }, 400);
+  // barChart.data = getBarData(newData);
+  // pieChart.data = getPieData(newData);
+  // radarChart.data = getRadarData(newData);
+  
+  // barChart.update();
+  // pieChart.update();
+  // radarChart.update();
 }
