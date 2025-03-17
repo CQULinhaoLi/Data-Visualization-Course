@@ -20,11 +20,35 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 });
 
+// async function fetchData() {
+//   const response = await fetch('medal_countries.csv');
+//   const csv = await response.text();
+//   return parseCSV(csv);
+// }
+
+
 async function fetchData() {
-  const response = await fetch('medal_countries.csv');
-  const csv = await response.text();
-  return parseCSV(csv);
+  showLoader();
+  try {
+    const response = await fetch('medal_countries.csv');
+    const csv = await response.text();
+    return parseCSV(csv);
+  } finally {
+    hideLoader();
+  }
 }
+
+function showLoader() {
+  const loader = `<div class="loader">🌍 加载数据中...</div>`;
+  document.body.insertAdjacentHTML('afterbegin', loader);
+}
+
+function hideLoader() {
+  document.querySelector('.loader').remove();
+}
+
+
+
 
 function parseCSV(csv) {
   const lines = csv.split('\n');
