@@ -116,16 +116,25 @@ function getBarData(data) {
       datasets: [{
           label: '金牌',
           data: data.map(d => d.gold),
-          backgroundColor: 'rgba(255, 206, 86, 0.7)'
+          backgroundColor: 'rgba(255, 206, 86, 0.7)',
+          borderRadius: 8,          // 圆角柱状图
+          borderSkipped: false,     // 完整圆角
+          categoryPercentage: 0.8,  // 调整柱宽
       }, {
           label: '银牌',
           data: data.map(d => d.silver),
-          backgroundColor: 'rgba(192, 192, 192, 0.7)'
+          backgroundColor: 'rgba(192, 192, 192, 0.7)',
+          borderRadius: 8,          // 圆角柱状图
+          borderSkipped: false,     // 完整圆角
+          categoryPercentage: 0.8,  // 调整柱宽
       }, {
           label: '铜牌',
           data: data.map(d => d.bronze),
-          backgroundColor: 'rgba(205, 127, 50, 0.7)'
-      }]
+          backgroundColor: 'rgba(205, 127, 50, 0.7)',
+          borderRadius: 8,          // 圆角柱状图
+          borderSkipped: false,     // 完整圆角
+          categoryPercentage: 0.8,  // 调整柱宽
+      }, ]
   };
 }
  
